@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jorge Barraza portfolio - Human-Computer Interaction professional | User-centered design and business solutions">
+    <title>Jorge Barraza | Portfolio</title>
+    <!-- IBM Plex Sans Font (Primary) -->
+    <link rel="stylesheet" href="css/ibm-plex-sans/css/ibm-plex-sans-all.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Burger Menu Button -->
+    <button class="burger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="burger-icon"></span>
+    </button>
+    
+    <!-- Side Navigation Menu -->
+    <div class="menu">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="menu-logo" aria-hidden="true">JB</div>
+            <a href="index.html" class="menu-link menu-link-1 active" data-page="home">Home</a>
+            <a href="#portfolio" class="menu-link menu-link-2" data-page="work">Work</a>
+            <a href="contact.html" class="menu-link menu-link-3" data-page="contact">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-content" id="main-content" role="main">
+        <section class="hero-section" aria-labelledby="portfolio-heading">
+            <h1 id="portfolio-heading" class="hero-title">Jorge Barraza</h1>
+            <h2 class="hero-subtitle">Transforming business challenges into user-centered solutions</h2>
+            <p class="hero-description">
+                I help clients solve business challenges by understanding user needs and translating requirements into solutions. 
+                Through research, evaluation, and working with teams, I aim to exceed both user expectations and business goals 
+                by delivering technology solutions that actually work (not just on paper).
+            </p>
+        </section>
+
+        <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-section-heading">
+            <div class="portfolio-container">
+                <h2 id="portfolio-section-heading" class="visually-hidden">Portfolio Projects</h2>
+                <div class="filter-nav" role="tablist" aria-label="Filter portfolio projects">
+                    <button class="filter-button active" type="button" role="tab" aria-selected="true" data-filter="all" aria-controls="portfolio-grid">All</button>
+                    <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="government" aria-controls="portfolio-grid">Government</button>
+                    <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="health" aria-controls="portfolio-grid">Health</button>
+                    <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="ux-research" aria-controls="portfolio-grid">UX research</button>
+                </div>
+                <div class="portfolio-grid" id="portfolio-grid" role="list">
+                    <article class="portfolio-card portfolio-card-featured" role="listitem" tabindex="0" aria-label="Portfolio project: Perch by Red-Tailed Designs" data-category="ux-research">
+                        <div class="card-image">
+                            <img src="css/Imgs/projectCardIMGS/perchCardIMG.png" alt="Perch workspace discovery app" class="card-project-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag tag-cyan">UX research</span>
+                            <h3 class="card-title">Perch: workspace discovery app</h3>
+                            <div class="card-description">
+                                <p class="card-problem">
+                                    <strong>Problem:</strong> Remote workers and students wasted hours searching for workspaces, 
+                                    only to discover missing essentials like reliable Wi-Fi or power outlets, disrupting productivity.
+                                </p>
+                                <p class="card-outcome">
+                                    <strong>Outcome:</strong> Verified amenities enabled workspace discovery in under 2 minutes. 
+                                    Mixed-methods research with 56 participants identified proximity and Wi-Fi quality as critical. 
+                                    The solution reduced search time by 75% and increased satisfaction from 52% to 89%.
+                            </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-methods">Contextual inquiry • Tree testing • Usability testing • Prototyping</span>
+                                <a href="caseStudyPages/perch.html" class="card-learn-more" aria-label="Learn more about Perch project">
+                                    Learn more
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem" tabindex="0" aria-label="Portfolio project: Osseo digital health app for rheumatoid arthritis" data-category="health">
+                        <div class="card-image">
+                            <img src="css/Imgs/projectCardIMGS/osseoCard.png" alt="Osseo digital health app" class="card-project-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag tag-green">Health</span>
+                            <h3 class="card-title">Osseo: digital health for rheumatoid arthritis</h3>
+                            <div class="card-description">
+                                <p class="card-problem">
+                                    <strong>Problem:</strong> Rheumatoid arthritis patients faced barriers communicating symptoms with 
+                                    providers, tracking medication adherence, and accessing real-time health data, resulting in delayed 
+                                    interventions and poor disease management.
+                                </p>
+                                <p class="card-outcome">
+                                    <strong>Outcome:</strong> Real-time symptom and medication tracking through wearable IoT integration 
+                                    enabled proactive health management. Communication features facilitated seamless patient-provider 
+                                    collaboration and reduced barriers by 65%. Gamification elements increased engagement with treatment 
+                                    plans, improved medication adherence, and enabled earlier interventions.
+                            </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-methods">Wearable technology • IoT integration • User-centered design • Healthcare communication</span>
+                                <a href="contact.html" class="card-learn-more" aria-label="Learn more about Osseo digital health project">
+                                    Learn more
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem" tabindex="0" aria-label="Portfolio project: Kane County State Attorney Office web evaluation" data-category="government">
+                        <div class="card-image">
+                            <img src="css/Imgs/projectCardIMGS/saoCardIMG.png" alt="Kane County State's Attorney Office website redesign" class="card-project-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag tag-blue">Government</span>
+                            <h3 class="card-title">Kane County State Attorney Office</h3>
+                            <div class="card-description">
+                                <p class="card-problem">
+                                    <strong>Problem:</strong> Citizens couldn't access critical legal information when needed, 
+                                    preventing understanding of rights and effective use of public services.
+                                </p>
+                                <p class="card-outcome">
+                                    <strong>Outcome:</strong> Citizens found legal resources 60% faster. Independent task completion 
+                                    increased while support requests decreased, improving public engagement with legal services.
+                            </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-methods">Heuristic evaluation • Usability testing • KLM analysis</span>
+                                <a href="contact.html" class="card-learn-more" aria-label="Learn more about Kane County State Attorney Office project">
+                                    Learn more
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem" tabindex="0" aria-label="Portfolio project: ADDA website content strategy and information architecture" data-category="ux-research">
+                        <div class="card-image">
+                            <img src="css/Imgs/projectCardIMGS/addaCardIMG.png" alt="ADDA website redesign" class="card-project-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag tag-blue">UX research</span>
+                            <h3 class="card-title">ADDA website redesign</h3>
+                            <div class="card-description">
+                                <p class="card-problem">
+                                    <strong>Problem:</strong> Community members couldn't access needed support services and resources, 
+                                    blocking critical assistance and limiting the organization's mission impact.
+                                </p>
+                                <p class="card-outcome">
+                                    <strong>Outcome:</strong> Redesigned information architecture accelerated resource location by 70%. 
+                                    Content audit revealed 40% of critical resources were buried 3+ clicks deep. The new structure 
+                                    increased resource access by 85% and reduced support inquiries by 50%.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-methods">Content strategy • Information architecture • Wireframing</span>
+                                <a href="contact.html" class="card-learn-more" aria-label="Learn more about ADDA website redesign project">
+                                    Learn more
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" aria-labelledby="about-heading">
+            <div class="about-container">
+                <p class="about-description">
+                    Every project teaches me something new about how people work and what they need. I take that understanding and turn it into solutions—whether that's evaluating existing systems, researching user needs, or helping teams implement technology that makes a real difference.
+                </p>
+                <a href="contact.html" class="about-contact-button">Get in touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-cy" role="contentinfo">
+        <p>
+            © copyright Jorge Barraza | <strong>Last updated Jan 2026</strong>
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
