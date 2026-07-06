@@ -187,11 +187,30 @@ body.open .burger:focus-visible .burger-icon::after {
     background: var(--carbon-interactive-01);
 }
 
+
 body:not(.open) .burger-icon,
 body:not(.open) .burger-icon::before,
 body:not(.open) .burger-icon::after {
     background: var(--carbon-text-01);
 }
+
+
+
+/* Desktop/tablet: push page content when menu opens */
+@media screen and (min-width: 768px) {
+    .main-content,
+    .footer-cy {
+        transition: margin-left 0.5s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    width 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    body.open .main-content,
+    body.open .footer-cy {
+        margin-left: min(50vw, 400px);
+        width: calc(100% - min(50vw, 400px));
+    }
+}
+
 
 .burger-icon::before,
 .burger-icon::after {
@@ -630,7 +649,7 @@ body:not(.open) .menu {
 
 .card-image {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -642,7 +661,7 @@ body:not(.open) .menu {
 }
 
 .portfolio-card-featured .card-image {
-    height: 300px;
+    aspect-ratio: 21 / 9;
 }
 
 .card-image svg {
@@ -672,7 +691,8 @@ body:not(.open) .menu {
 .card-project-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -1893,4 +1913,186 @@ body:not(.open) .menu {
         border: 1px solid #000;
     }
 }
+/* ==========================
+   Cover Card Test
+========================== */
 
+.portfolio-card-cover-test {
+    position: relative;
+}
+
+.portfolio-card-cover-test .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.portfolio-card-cover-test .card-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--transition-base),
+                filter var(--transition-base);
+}
+
+.portfolio-card-cover-test .card-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: background var(--transition-base), opacity var(--transition-base);
+}
+
+.portfolio-card-cover-test:hover .card-content,
+.portfolio-card-cover-test:focus .card-content,
+.portfolio-card-cover-test:focus-within .card-content {
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+}
+
+.portfolio-card-cover-test:hover .card-project-image,
+.portfolio-card-cover-test:focus .card-project-image,
+.portfolio-card-cover-test:focus-within .card-project-image {
+    transform: scale(1.03);
+    filter: blur(2.5px);
+}
+
+.portfolio-card-cover-test .tag,
+.portfolio-card-cover-test .card-title,
+.portfolio-card-cover-test .card-methods,
+.portfolio-card-cover-test .card-learn-more svg {
+    display: none;
+}
+
+.portfolio-card-cover-test .card-description {
+    max-width: 100%;
+    margin: 0;
+    color: white;
+    font-size: var(--type-scale-1);
+    line-height: 1.45;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.portfolio-card-cover-test .card-problem,
+.portfolio-card-cover-test .card-outcome {
+    margin: 0;
+}
+
+.portfolio-card-cover-test .card-problem {
+    margin-bottom: 2.00rem;
+    margin-top: 0.25rem;
+}
+
+.portfolio-card-cover-test .card-description strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-card-cover-test .card-footer {
+    margin-top: 1.75rem;
+    align-items: center;
+}
+
+.portfolio-card-cover-test .card-learn-more {
+    opacity: 1;
+    transform: none;
+    pointer-events: none;
+    color: white;
+    font-size: var(--type-scale-5);
+    font-weight: var(--font-weight-semibold);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+@media screen and (max-width: 900px) {
+    .portfolio-card-cover-test .card-content {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .portfolio-card-cover-test .card-description {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        max-width: 90%;
+    }
+
+    .portfolio-card-cover-test .card-learn-more {
+        font-size: 1.125rem;
+    }
+
+    .portfolio-card-cover-test .card-problem {
+        margin-bottom: 0.75rem;
+    }
+
+    .portfolio-card-cover-test .card-footer {
+        margin-top: 0.75rem;
+    }
+}
+
+/* ==========================
+   PDF Modal
+========================== */
+
+.pdf-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.pdf-modal[hidden] {
+    display: none;
+}
+
+.pdf-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.pdf-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pdf-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.pdf-modal-close:hover,
+.pdf-modal-close:focus {
+    background: #f2f2f2;
+}
+
+#pdfFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
