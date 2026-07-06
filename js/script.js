@@ -466,3 +466,55 @@
 
 })();
 
+// PDF Modal
+const pdfCards = document.querySelectorAll(".portfolio-card[data-pdf]");
+const pdfModal = document.getElementById("pdfModal");
+const pdfFrame = document.getElementById("pdfFrame");
+const closePdfModal = document.getElementById("closePdfModal");
+const modalOverlay = document.querySelector(".pdf-modal-overlay");
+
+let lastFocusedCard = null;
+
+function openPdfModal(card) {
+    lastFocusedCard = card;
+
+    const pdfPath = card.getAttribute("data-pdf");
+
+    pdfFrame.src = pdfPath;
+    pdfModal.hidden = false;
+    closePdfModal.focus();
+}
+
+function closeModal() {
+    pdfModal.hidden = true;
+    pdfFrame.src = "";
+
+    if (lastFocusedCard) {
+        setTimeout(function() {
+            lastFocusedCard.blur();
+        }, 350);
+    }
+}
+
+pdfCards.forEach(function(card) {
+    card.addEventListener("click", function(event) {
+        event.preventDefault();
+        openPdfModal(card);
+    });
+
+    card.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openPdfModal(card);
+        }
+    });
+});
+
+closePdfModal.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && !pdfModal.hidden) {
+        closeModal();
+    }
+});
