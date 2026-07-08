@@ -5,7 +5,49 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Recursive";
+    src: url("./Recursive/Recursive_VariableFont.ttf") format("truetype-variations");
+    font-weight: 300 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
+
+/* Typography */
+--font-primary: "Recursive", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+/* Minor Third Type Scale - base: 26.67px */
+--text-caption: 1.1575rem;   /* 18.52px */
+--text-small: 1.38875rem;    /* 22.22px */
+--text-body: 1.666875rem;    /* 26.67px */
+--text-h6: 1.666875rem;      /* 26.67px */
+--text-h5: 2.000625rem;      /* 32.01px */
+--text-h4: 2.400625rem;      /* 38.41px */
+--text-h3: 2.880625rem;      /* 46.09px */
+--text-h2: 3.456875rem;      /* 55.31px */
+--text-h1: 4.148125rem;      /* 66.37px */
+
+/* Design roles */
+--type-display: var(--text-h1);
+--type-heading: var(--text-h3);
+--type-subheading: var(--text-h4);
+--type-body: var(--text-body);
+--type-button: var(--text-small);
+--type-small: var(--text-small);
+--type-label: var(--text-caption);
+
+/* Line heights */
+--line-tight: 1.1;
+--line-normal: 1.35;
+--line-relaxed: 1.55;
+
+
+
+
+/*----------------------------------------------------------------------------------------------------*/
+
     /* IBM Brand Colors */
     --ibm-blue-50: #e6f1ff;
     --ibm-blue-60: #0f62fe;
@@ -97,31 +139,60 @@ html {
 }
 
 body {
-    font-family: var(--font-family-sans);
-    font-size: var(--type-body-02);
+    font-family: var(--font-primary);
+    font-size: var(--type-body);
     font-weight: var(--font-weight-regular);
-    line-height: var(--type-body-02-line-height);
+    line-height: var(--line-relaxed);
     color: var(--carbon-text-01);
     background-color: var(--carbon-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: var(--type-body);
+    line-height: var(--line-relaxed);
+    font-kerning: normal;
+    font-optical-sizing: auto;
+    font-feature-settings:
+    "liga" 1,
+    "calt" 1,
+    "tnum" 1;
 }
 
-/* Skip to main content link for accessibility */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--carbon-ui-05);
-    color: var(--carbon-ui-01);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
+.type-body-mode {
+    font-variation-settings:
+        "MONO" 0,
+        "CASL" 0,
+        "wght" 420,
+        "slnt" 0,
+        "CRSV" 0;
 }
 
-.skip-link:focus {
-    top: 0;
+.type-heading-mode {
+    font-variation-settings:
+        "MONO" 0,
+        "CASL" 1,
+        "wght" 760,
+        "slnt" 0,
+        "CRSV" 0;
 }
+
+.type-label-mode {
+    font-variation-settings:
+        "MONO" 0,
+        "CASL" 0.5,
+        "wght" 600,
+        "slnt" 0,
+        "CRSV" 0;
+}
+
+.type-mono-mode {
+    font-variation-settings:
+        "MONO" 1,
+        "CASL" 0,
+        "wght" 500,
+        "slnt" 0,
+        "CRSV" 0;
+}
+
 
 /* Burger Menu and Side Navigation */
 .burger,
@@ -327,10 +398,10 @@ body:not(.open) .menu {
 .menu a {
     position: relative;
     color: var(--carbon-ui-01);
-    font-size: var(--type-scale-8);
-    font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-regular);
-    line-height: 1.294;
+    font-size: var(--type-button);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--line-normal);
     padding: 18px 0;
     height: 80px;
     width: 100%;
@@ -467,26 +538,26 @@ body:not(.open) .menu {
 }
 
 .hero-title {
-    font-size: clamp(var(--type-scale-12), 8vw, var(--type-scale-15));
+    font-size: var(--type-display);
     font-weight: var(--font-weight-light);
     margin-bottom: calc(var(--spacing-unit) * 1.5);
-    line-height: 1.25;
+    line-height: var(--line-tight);
     color: var(--carbon-text-01);
     letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-    font-size: clamp(var(--type-scale-8), 4vw, var(--type-scale-10));
+    font-size: var(--type-subheading);
     font-weight: var(--font-weight-regular);
     margin-bottom: calc(var(--spacing-unit) * 3);
-    line-height: 1.294;
+    line-height: var(--line-normal);
     color: var(--carbon-text-01);
 }
 
 .hero-description {
-    font-size: var(--type-body-02);
+    font-size: var(--type-body);
     font-weight: var(--font-weight-regular);
-    line-height: var(--type-body-02-line-height);
+    line-height: var(--line-relaxed);
     max-width: 65ch;
     margin: 0 auto;
     margin-top: 0;
