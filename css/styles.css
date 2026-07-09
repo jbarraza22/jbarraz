@@ -390,8 +390,7 @@ body:not(.open) .menu {
 
 .menu nav a:focus,
 .menu nav a:focus-visible {
-    outline: 2px solid var(--carbon-interactive-01);
-    outline-offset: 4px;
+    outline: none;
     opacity: 1;
 }
 
