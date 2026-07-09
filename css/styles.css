@@ -568,7 +568,7 @@ body:not(.open) .menu {
     max-width: 65ch;
     margin: 0 auto;
     margin-top: 0;
-    padding-top: 25px;
+    padding-top: 15px;
     padding-bottom: 25px;
     color: var(--carbon-text-02);
 }
