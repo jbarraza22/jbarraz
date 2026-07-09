@@ -507,6 +507,11 @@ body:not(.open) .menu {
     z-index: 1;
 }
 
+.hero-symbols {
+    font-size: var(--type-heading);
+    line-height: 1;
+}
+
 /* Blur background behind text on contact page */
 .contact-section .hero-content {
     backdrop-filter: blur(1.5px);
